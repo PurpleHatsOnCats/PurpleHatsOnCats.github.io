@@ -102,6 +102,11 @@ h4{
     font-size:3em;
     text-align: center;
 }
+h5{
+    font-size:1.5em;
+    margin:0.5em 0.667em 0 0.667em;
+    font-weight: bold;
+}
 em{
     font-family: 'folio', Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -129,7 +134,10 @@ em{
     padding: 0.5em;
     text-align: center;
     text-decoration: none;
-    flex: 0 1 4em;
+    flex: 0 1 4.5em;
+}
+#nav a.double-width{
+    flex: 0 1 9em;
 }
 
 a.bright:link{
@@ -206,17 +214,17 @@ div#intro{
 }
 #projects div.grid-container{
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows:75px 75px;
-    grid-auto-rows: 75px;
+    grid-auto-rows: 80px;
     width:100%;
     margin:0 0 5em 0;
+    flex-shrink: 0;
 }
 #projects div.grid-container div{
     margin:5px;
 }
 #projects p{
     margin:auto;
-    padding:1em;
+    padding:0 1em;
 }
 .project{
     width:45%;
@@ -228,7 +236,7 @@ div#intro{
 }
 .project ul{
     list-style-type:disc;
-    padding: 0 1em 0 40px;
+    padding: 1em 1em 1em 40px;
 }
 
 div.button a{
@@ -249,18 +257,22 @@ div.button a:active{
 }
 div.icon{
     display:flex;
-    justify-content: center;
+    justify-content: left;
 }
-div.icon>img, div.icon a{
-    height:50%;
-    margin:auto;
+#projects div.icon>p{
+    margin:auto 0.7em;
+    padding:5em;
+}
+div.icon>img, div.icon>a{
+    height:60%;
+    margin:auto 0.7em;
 }
 div.icon>a>img{
     height:100%;
 }
 #projects div.icon p{
     padding:0.3em;
-    width:60%;
+    width:70%;
 }
 div.screenshot, div.video{
     display: flex;
@@ -273,7 +285,7 @@ div.screenshot img, div.video iframe{
     flex: 0 1 auto;
 }
 div.text-block, #intro-description p, div.icon{
-    font-size: calc(1vw + 0.5em);
+    font-size: calc(1vw + 0.4em);
 }
 
 div.span-one{
@@ -281,6 +293,9 @@ div.span-one{
 }
 div.span-two{
     grid-column: span 4;
+}
+div.span-threehalves{
+    grid-column: span 3;
 }
 div.span-half{
     grid-column: span 1;
@@ -290,6 +305,9 @@ div.height-one{
 }
 div.height-two{
     grid-row: span 4;
+}
+div.height-threehalves{
+    grid-row: span 3;
 }
 div.height-half{
     grid-row: span 1;
@@ -390,14 +408,13 @@ div.copyright{
     
     /* Main */
     #projects div.grid-container{
-        width:50%;
+        width:47%;
     }
     #projects div.flex-container{
-        flex-wrap: nowrap;
-        justify-content: space-around;
+        justify-content: space-between;
     }
     div.text-block, #intro-description p{
-        font-size: calc(0.5vw + 0.5em);
+        font-size: calc(0.93vw + 0.1em);
     }
     div.icon{
         font-size: 1em;
