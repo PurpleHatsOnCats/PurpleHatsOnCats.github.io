@@ -318,11 +318,17 @@ div.height-half{
 
 #contact{
     display:flex;
-    background-color: #09709c;
+    background-color: #2e2e2e;
+    justify-content: center;
 }
 #contact div{
     display:flex;
-    margin:2em;
+    margin:1em;
+    width:4em;
+    text-wrap:nowrap;
+}
+#contact img{
+    width:100%
 }
 a:link{
     color:#26b5ef;
