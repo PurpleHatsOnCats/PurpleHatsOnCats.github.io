@@ -113,28 +113,56 @@ em{
 #nav-menu input{
     display: none;
 }
-#nav-menu label{
+#title-bar{
+    width:100vw;
+    background-color: #0090d0;
+    display:grid;
+    grid-template-columns: 5em 1fr;
+}
+#title-bar > *{
+    /* border:1px solid black; */
+}
+#title-bar > h2{
+    width:100%;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#title-bar label{
     cursor: pointer;
     padding: 1em;
-    width:100vw;
-    height:1.5em;
+    height: 1.5em;
     text-wrap: nowrap;
-    background-color: #0090d0;
     font-family: inherit;
     font-size: inherit;
     color:inherit;
+    
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    visibility:hidden;
     display:flex;
     align-items: center;
     pointer-events: auto;
 }
-#nav-menu input:checked +label{
+#title-bar h2{
+    font-weight: normal;
+    font-size:1em;
+    padding:1rem;
+    text-align: center;
+}
+#nav-menu input:checked +#title-bar label{
     width:calc(100% - 2em);
 }
 #nav-menu label img{
     content: url("../media/menu-icon.svg");
     width:2em;
+    padding:0.5em;
+    visibility: visible;
 }
-#nav-menu input:checked +label img{
+#nav-menu input:checked +#title-bar label img{
     content: url("../media/back-arrow.svg");
 }
 #nav-menu input:checked ~ #nav-list{
@@ -142,16 +170,19 @@ em{
     display:flex;
     pointer-events: auto;
 }
-#nav-menu input:hover +label{
+#nav-menu input:hover +#title-bar label{
+    background-color: #09709c;
+}
+#nav-menu input:hover +#title-bar label img{
     background-color: #09709c;
 }
 #nav-list{
     height:0;
     overflow: hidden;
-    /* display:none; */
     flex-direction: column;
     justify-content: left;
     pointer-events: none;
+    width:12em;
 }
 #nav-menu{
     display:flex;
@@ -419,12 +450,18 @@ div.copyright{
         padding:4.5rem;
     }
     #nav-menu{
-        width:20em;
+        width:12em;
     }
 }
 @media screen and (min-width: 800px){
     #intro-heading h2{
         font-size: 3em;
+    }
+    #title-bar label{
+        visibility: visible;
+    }
+    #title-bar{
+        grid-template-columns: 12em 1fr;
     }
 }
 @media screen and (min-width: 1240px){
@@ -436,7 +473,7 @@ div.copyright{
         padding:4.5rem 4rem;
     }
     /* Navigation */
-    #nav-menu label{
+    #title-bar{
         display:none;
     }
     #nav-list{
