@@ -9,12 +9,16 @@
     </head>
     <body>
         <nav>
-            <div class="dark-blue" id="nav">
-                <a href="#intro-nav" class="bright">Intro</a>
-                <a href="#academic-projects-nav" class="bright double-width">Academic Projects</a>
-                <a href="#personal-projects-nav" class="bright double-width">Personal Projects</a>
-                <a href="#contact-nav" class="bright">Contact</a>
-                <a href="media/Vandivere_Seth_Resume.pdf" class="bright">Resume</a>
+            <div id="nav-menu">
+                <input type="checkbox" id="nav-expand">
+                <label for="nav-expand"><img src="media/menu-icon.svg" alt="">Navigation</label>
+                <ul class="dark-blue" id="nav-list">
+                    <li><a href="#intro-nav" class="bright">Intro</a></li>
+                    <li class="double-width"><a href="#academic-projects-nav" class="bright">Academic Projects</a></li>
+                    <li class="double-width"><a href="#personal-projects-nav" class="bright">Personal Projects</a></li>
+                    <li><a href="#contact-nav" class="bright">Contact</a></li>
+                    <li><a href="media/Vandivere_Seth_Resume.pdf" class="bright">Resume</a></li>
+                </ul>
             </div>
         </nav>
         <div id="site">
@@ -263,9 +267,22 @@
                     <a href="https://github.com/PurpleHatsOnCats" class="bright"><img src="media/github-icon.png" alt="github"></a>
                 </div>
                 <div>
-                    <a href="mailto:seth.vandivere@gmail.com" class="bright">Email: seth.vandivere@gmail.com</a>
+                    <a href="mailto:seth.vandivere@gmail.com" class="bright"><img src="media/email-icon.png" alt="seth.vandivere@gmail.com"></a>
                 </div>
             </div>
         </footer>
+    <script>
+        let expandButton = document.querySelector("#nav-expand");
+        let menuButtons = document.querySelectorAll("#nav-list a");
+
+        for(let button of menuButtons){
+            button.onclick = buttonClicked;
+        }
+
+        function buttonClicked(){
+            expandButton.checked = false;
+        }
+        
+    </script>
     </body>
 </html>

@@ -12,12 +12,12 @@ body{
 }
 #site{
     margin: 0 auto;
-    padding:3rem 1rem 1rem 1rem;
+    padding:4.5rem 1rem 1rem 1rem;
 }
 
 div.nav-location{
     position: relative;
-    top:-3.5em;
+    top:-4.5em;
 }
 
 /* FONTS */
@@ -58,7 +58,7 @@ div.blue{
     background-color: #26b5ef;
     z-index: 3;
 }
-div.dark-blue{
+.dark-blue{
     background-color: #0090d0;
     z-index: 3;
 }
@@ -67,16 +67,6 @@ div.dark-blue, div.red, div.blue{
 }
 
 /* GENERIC STYLES */
-#intel-logo{
-    width: 100px;
-    height: 100px;
-    background-image: url(../media/intel-logo.png);
-    background-size: cover;
-    text-indent: -9999px;
-    position: relative;
-    bottom:-10px;
-
-}
 .content{
     z-index:2;
 }
@@ -116,28 +106,82 @@ em{
 }
 .grid-container{
     display:grid;
-    /* border:3px solid black; */
     width:100%;
 }
 
 /* NAVIGATION */
-#nav{
+#nav-menu input{
+    display: none;
+}
+#nav-menu label{
+    cursor: pointer;
+    padding: 1em;
+    width:100vw;
+    height:1.5em;
+    text-wrap: nowrap;
+    background-color: #0090d0;
+    font-family: inherit;
+    font-size: inherit;
+    color:inherit;
     display:flex;
+    align-items: center;
+    pointer-events: auto;
+}
+#nav-menu input:checked +label{
+    width:calc(100% - 2em);
+}
+#nav-menu label img{
+    content: url("../media/menu-icon.svg");
+    width:2em;
+}
+#nav-menu input:checked +label img{
+    content: url("../media/back-arrow.svg");
+}
+#nav-menu input:checked ~ #nav-list{
+    height: 100%;
+    display:flex;
+    pointer-events: auto;
+}
+#nav-menu input:hover +label{
+    background-color: #09709c;
+}
+#nav-list{
+    height:0;
+    overflow: hidden;
+    /* display:none; */
+    flex-direction: column;
+    justify-content: left;
+    pointer-events: none;
+}
+#nav-menu{
+    display:flex;
+    flex-direction: column;
     justify-content: left;
     position:fixed;
     z-index: 10;
     width:100%;
-    height: 3.5em;
-}
-#nav a{
+    height: 100%;
+    padding: 0;
     font-size: 1.5rem;
-    padding: 0.5em;
-    text-align: center;
-    text-decoration: none;
-    flex: 0 1 4.5em;
+    color:white;
+    pointer-events: none;
 }
-#nav a.double-width{
-    flex: 0 1 9em;
+#nav-menu li{
+    padding: 0;
+    flex: 0 0 3em;
+    margin:0;
+}
+#nav-menu a{
+    display: flex;
+    justify-content: left;
+    padding: 0 0 0 1em;
+    align-items: center;
+    text-decoration: none;
+    width:calc(100% - 1em);
+    height:100%;
+}
+#nav-menu li.double-width{
+    flex: 0 0 3em;
 }
 
 a.bright:link{
@@ -152,7 +196,7 @@ a.bright:focus{
 a.bright:hover{
     color:#d1d1d1;
 }
-#nav a:hover{
+#nav-menu a:hover{
     background-color: #09709c;
 }
 a.bright:active{
@@ -330,6 +374,9 @@ div.height-half{
 #contact img{
     width:100%
 }
+#contact a{
+    text-wrap: wrap;
+}
 a:link{
     color:#26b5ef;
 }
@@ -355,7 +402,7 @@ div.copyright{
 
 @media screen and (min-width: 640px){
     #intro-heading h2{
-        font-size: 2.5em;
+        font-size: 2em;
     }
     h1{
         text-align: left;
@@ -369,7 +416,10 @@ div.copyright{
     }
     #site{
         margin: 0 auto;
-        padding:3rem;
+        padding:4.5rem;
+    }
+    #nav-menu{
+        width:20em;
     }
 }
 @media screen and (min-width: 800px){
@@ -383,7 +433,36 @@ div.copyright{
     }
     #site{
         margin: 0 auto;
-        padding:3rem 4rem;
+        padding:4.5rem 4rem;
+    }
+    /* Navigation */
+    #nav-menu label{
+        display:none;
+    }
+    #nav-list{
+        flex-direction: row;
+        height:100%;
+        width:100%;
+        display:flex;
+        pointer-events: auto;
+    }
+    #nav-menu{
+        flex-direction: row;
+        position:fixed;
+        width:100vw;
+        height: 3.5em;
+    }
+    #nav-menu li{
+        flex: 0 0 5em;
+    }
+    #nav-menu a{
+        justify-content: center;
+        align-items: center;
+        padding:0;
+        width:100%;
+    }
+    #nav-menu li.double-width{
+        flex: 0 0 10em;
     }
 
     /* Intro */
