@@ -353,25 +353,61 @@ div.button a:active{
 }
 div.icon{
     justify-content: left;
-    display:flex;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: min-content 1fr;
+    line-height: 0;
 }
-#projects div.icon>p{
-    margin:auto 1em auto 0;
+#projects div.icon p{
+    /* margin:auto 1em auto 0; */
     padding:0;
     height:min-content;
+    display:none;
+    font-size:1.3em;
 }
-#projects div.icon>img, #projects div.icon>a{
+#projects div.icon input{
+    display:none;
+}
+#projects div.icon label{
+    width:100%;
+    height:min-content;
+    grid-row: 1/2;
+    justify-self: center;
+}
+#projects div.icon input:hover +p +label>img{
+    position:relative;
+    bottom:10px;
+}
+#projects div.icon input:checked +p +label{
+    background-color: #3b3b3b;
+}
+#projects div.icon input:checked +p{
+    display:block;
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    text-align: center;
+    grid-column: 1/-1;
+    grid-row:2/3;
+    line-height: 1em;
+    padding:0.5em 0;
+    background-color: #3b3b3b;
+}
+#projects div.icon label>img, #projects div.icon label>a{
     height:3em;
+    padding:1em;
+    margin:auto;
+    display:block;
     /* width:auto; */
-    padding:1em 0;
-    margin:auto 1em;
+    /* padding:1em 0; */
+    /* margin:auto 1em; */
 }
 div.icon>a>img{
     height:100%;
 }
 #projects div.icon p{
-    padding:0.3em;
-    width:70%;
+    /* padding:0.3em;
+    width:70%; */
 }
 div.screenshot, div.video{
     display: flex;
@@ -436,7 +472,6 @@ div.height-half{
 }
 
 /* FOOTER */
-
 #contact{
     display:flex;
     background-color: #2e2e2e;
