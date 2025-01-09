@@ -16,7 +16,7 @@ body{
 
 div.nav-location{
     position: relative;
-    top:-4.5em;
+    top:-112px;
 }
 
 /* FONTS */
@@ -37,6 +37,12 @@ div.nav-location{
     src: url(../media/folio-std/Folio-Std-Light.ttf);
     font-weight: normal;
     font-style: normal;
+}
+.sans {
+    font-family: 'folio-light', Arial, Helvetica, sans-serif;
+}
+.serif {
+    font-family: serif;
 }
 
 /* DIV STYLES */
@@ -110,7 +116,6 @@ p, ul{
     font-family: serif;
 }
 em{
-    font-family: 'folio', Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 .grid-container p{
@@ -141,8 +146,8 @@ em{
 }
 #title-bar label{
     cursor: pointer;
-    padding: 1em;
-    height: 1.5em;
+    
+    height: 100%;
     text-wrap: nowrap;
     font-family: inherit;
     font-size: inherit;
@@ -167,12 +172,15 @@ em{
 }
 #nav-menu label img{
     content: url("../media/menu-icon.svg");
-    width:2em;
-    padding:0.5em;
+    padding:1.5rem;
+    height:64px;
     visibility: visible;
+    display:block;
+    box-sizing: content-box;
 }
 #nav-menu input:checked +#title-bar label img{
     content: url("../media/back-arrow.svg");
+    height:64px;
 }
 #nav-menu input:checked ~ #nav-list{
     height: 100%;
@@ -264,7 +272,6 @@ div#intro{
 }
 #intro-heading h2{
     color: white;
-    font-family: 'folio-light';
     font-size: 3.5em;
     line-height: 1;
     padding:0.5em 0.5em 0.5em 0.5em;
@@ -315,14 +322,10 @@ div#intro{
 }
 #projects .project>div{
     margin:5px;
-    
 }
 #projects p{
     margin:auto;
     padding:0 1em;
-}
-.project{
-    width:45%;
 }
 .project-title{
     display:flex;
@@ -513,44 +516,10 @@ a:active{
 }
 div.copyright{
     color:#d6d6d6;
-    /* font-size: 0.5em; */
     justify-self: left;
     width: 66%;
 }
-
-
-@media screen and (min-width: 640px){
-    /* #intro-heading h2{
-        font-size: 2em;
-    }
-    h1{
-        text-align: left;
-    }
-    h2{
-        text-align: left;
-    }
-    div#intro{
-        grid-template-rows: 100px 1fr 25px 25px 25px 25px 60px min-content;
-        grid-template-columns: 30px 60px 25px 2fr 3fr 30px;
-    }
-    #site{
-        margin: 0 auto;
-        padding:4.5rem;
-    }
-    #nav-menu{
-        width:12em;
-    } */
-}
-@media screen and (min-width: 1000px){
-    /* #intro-heading h2{
-        font-size: 3em;
-    }
-    #title-bar label{
-        visibility: visible;
-    }
-    #title-bar{
-        grid-template-columns: 12em 1fr;
-    } */
+@media screen and (min-width: 800px){
     #intro-heading h2{
         font-size: 5em;
     }
@@ -585,92 +554,11 @@ div.copyright{
         grid-row: span 1;
     }
 }
-@media screen and (min-width: 1240px){
-    /* #intro-heading h2{
-        font-size: 4em;
+@media screen and (min-width: 1640px){
+    #projects .project{
+        width:48%;
     }
-    #site{
-        margin: 0 auto;
-        padding:4.5rem 4rem;
-    } */
-    /* Navigation */ 
-    /* #title-bar{
-        display:none;
+    .project div.icon{
+        grid-row: span 3;
     }
-    #nav-list{
-        flex-direction: row;
-        height:100%;
-        width:100%;
-        display:flex;
-        pointer-events: auto;
-    }
-    #nav-menu{
-        flex-direction: row;
-        position:fixed;
-        width:100vw;
-        height: 3.5em;
-    }
-    #nav-menu li{
-        flex: 0 0 5em;
-    }
-    #nav-menu a{
-        justify-content: center;
-        align-items: center;
-        padding:0;
-        width:100%;
-    }
-    #nav-menu li.double-width{
-        flex: 0 0 10em;
-    } */
-
-    /* Intro */
-    /* div#intro{
-        grid-template-rows: 100px 1fr 25px 25px 60px min-content;
-        grid-template-columns: 30px 2fr 1fr 60px 25px 2fr 30px;
-    }
-    #intro-heading{
-        grid-row: 2/-2;
-        grid-column: 2/3;
-    }
-    #description-background{
-        grid-row:-5/-1;
-        grid-column: -5/-2;
-    }
-    #intro-description{
-        grid-row:-4/-1;
-        grid-column: -3/-2;
-    }
-    #red-block{
-        grid-row: 5/6;
-        grid-column: 4/5;
-    }
-    #yellow-block{
-        grid-row: 4/5;
-        grid-column: 5/6;
-    } */
-    
-    /* Main */
-    /* #projects div.grid-container{
-        width:47%;
-    }
-    #projects div.flex-container{
-        justify-content: space-between;
-    }
-    div.text-block, #intro-description p{
-        font-size: calc(0.93vw + 0.1em);
-    }
-    div.icon{
-        font-size: 1em;
-    } */
-
-    /* General */
-    /* h1{
-        font-size:5em;
-    }
-    h2{
-        font-size:3.5em;
-    }
-    h3{
-        font-size:2.5em;
-    } */
 }
