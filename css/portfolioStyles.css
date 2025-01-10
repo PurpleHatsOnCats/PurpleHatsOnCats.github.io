@@ -413,7 +413,6 @@ div.icon>a>img{
     width:70%; */
 }
 div.screenshot, div.video{
-    display: flex;
     justify-content: center;
     padding:1em;
 }
@@ -423,7 +422,58 @@ div.screenshot img{
     margin:auto;
     flex: 1 1 auto;
 }
-div.video iframe{
+.carousel{
+    position:relative;
+    /* display: flex; */
+    justify-content: center;
+    padding:1em;
+}
+.carousel > div{
+    max-height:100%;
+    max-width: 100%;
+    display:none;
+    margin:auto;
+    position:relative;
+}
+.carousel > div>img{
+    width:100%;
+}
+.carousel input:checked+div, .carousel input:checked+label+div{
+    display:block;
+}
+.carousel input:checked+div+input+label+div+input+label, .carousel input:checked+div+input+label+div+label{
+    /* next */
+    display:block;
+    position:absolute;
+    transform: scaleX(-1);
+    top:50%;
+    right:1em;
+    z-index: 50;
+}
+.carousel input:checked+label{
+    /* previous */
+    display:block;
+    position:absolute;
+    top:50%;
+    z-index: 50;
+}
+.carousel input{
+    display:none;
+}
+.carousel label{
+    width:min-content; 
+    height:min-content;
+    display:none;
+    line-height: 0;
+}
+.carousel label img{
+    width:3em;
+    height:3em;
+    transform:translateY(-50%);
+    display:block;
+    background-color:#3b3b3b59;
+}
+.video-container iframe{
     position: absolute;
     top: 0;
     left: 0;
