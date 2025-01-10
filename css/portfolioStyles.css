@@ -415,6 +415,7 @@ div.icon>a>img{
 div.screenshot, div.video{
     justify-content: center;
     padding:1em;
+    display:flex;
 }
 div.screenshot img{
     max-height:100%;
@@ -424,9 +425,10 @@ div.screenshot img{
 }
 .carousel{
     position:relative;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
     padding:1em;
+    padding-bottom: 3em;
 }
 .carousel > div{
     max-height:100%;
@@ -434,6 +436,7 @@ div.screenshot img{
     display:none;
     margin:auto;
     position:relative;
+    order: 2;
 }
 .carousel > div>img{
     width:100%;
@@ -441,20 +444,22 @@ div.screenshot img{
 .carousel input:checked+div, .carousel input:checked+label+div{
     display:block;
 }
-.carousel input:checked+div+input+label+div+input+label, .carousel input:checked+div+input+label+div+label{
+.carousel input:checked+label+div+input+label+div+label, 
+.carousel input:checked+div+input+label+div+input+label, 
+.carousel input:checked+div+input+label+div+label{
     /* next */
     display:block;
     position:absolute;
-    transform: scaleX(-1);
-    top:50%;
-    right:1em;
+    transform: scaleX(-1) translateX(-50%);
+    bottom:0;
     z-index: 50;
 }
 .carousel input:checked+label{
     /* previous */
     display:block;
     position:absolute;
-    top:50%;
+    transform: translateX(-50%);
+    bottom:0;
     z-index: 50;
 }
 .carousel input{
@@ -469,9 +474,11 @@ div.screenshot img{
 .carousel label img{
     width:3em;
     height:3em;
-    transform:translateY(-50%);
     display:block;
-    background-color:#3b3b3b59;
+    background-color:#0e0e0ea4;
+}
+.carousel label img:hover{
+    background-color:#313131a4;
 }
 .video-container iframe{
     position: absolute;
@@ -493,9 +500,6 @@ div.screenshot img{
 }
 div.text-block, #intro-description p, div.icon{
     font-size: 1.3em;
-}
-div.white li{
-    /* font-size: 8px; */
 }
 
 
