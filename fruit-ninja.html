@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" content="width=device-width, initial-scale=1.0">
         <title>Seth's Portfolio - Fruit Ninja</title>
-        <link rel="icon" type="media/favicon/x-icon" href="media/favicon/favicon.ico">
+        <link rel="icon" type="media/favicon" href="media/favicon/favicon.ico">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/portfolioStyles.css">
     </head>
@@ -18,7 +18,7 @@
                     </label>
                     <h2>Seth's Portfolio</h2>
                 </div>
-                <ul class="dark-blue" id="nav-list">
+                <ul class="dark-blue sans" id="nav-list">
                     <li><a href="index.html#intro-nav" class="bright">Intro</a></li>
                     <li class="double-width"><a href="index.html#academic-projects-nav" class="bright">Academic Projects</a></li>
                     <li class="double-width"><a href="index.html#personal-projects-nav" class="bright">Personal Projects</a></li>
@@ -33,10 +33,133 @@
             <h1>Fruit Ninja</h1>
         </header>
         <main>
-            <!-- INTRO -->
+            <div class="longForm">
+            <h2>Fruit Ninja</h2>
+            <div class="details">
+                
+            </div>
+            <div class="half-screen intro">
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <p class="indent">In my third semester at RIT I took the class Interactive Media Development, where we learned the basics of creating games in 2D and 
+                    3D. We used the Unity game engine to create several projects, one of them being this Fruit Ninja project. The assignment was to 
+                    re-create the basic mechanics of fruit ninja. I went beyond these requirements by attempting to have the fruits visually split in 
+                    half when they were cut. I accomplished this by creating an equation for a circle-line intersection and utilizing Unity’s mask 
+                    component.
+                </p>
+            </div>
+            <figure>
+                <img src="media/gifs/fruit-frenzy.gif" alt="">
+                <figcaption>A screen capture of several fruit being cut in my project.</figcaption>
+            </figure>
+            <h3>Project Requirements</h3>
+            <p class="indent">This project is a re-creation of the mobile game Fruit Ninja, but what does that include exactly? The assignment requirements 
+                needed a full gameplay loop, with a losing condition and some kind of objective; it didn’t have to be the exact same as the 
+                original game. However, the main gameplay must consist of the user dragging their finger (or mouse) across the screen to slice 
+                fruit. This meant there were three main mechanics to implement:
+            </p>
+            <ul>
+                <li>Object creation - fruit needed to be spawned, shot up into the screen, and then deleted when they should.</li>
+                <li>Slicing detection - the user’s input needed to be collected, and used to determine if each fruit was cut or not.</li>
+                <li>Cut fruit - cut fruit had to result in something: for my project, a cut fruit counted for a point and then needed to 
+                    visually split in half.</li>
+            </ul>
             
-            <!-- MAIN DETAILS -->
+            <h3>The Math</h3>
+	        <p>
+                We were given two option for collision detection:
+            </p>
+            <ol>
+                <li>Using Unity’s built in 2D collision detection</li>
+                <li>Manually calculating each frame if a fruit had collided with the slicing action.</li>
+            </ol>
+            <p>
+                I chose the latter, because I love this kind of math and wanted to practice my algebra skills. The pure math way also had some 
+                benefits:
+            </p>
+            <ul>
+                <li>It provided an easier way to correctly interpolate a fruit that was moving fast (which I actually didn’t do for this 
+                    project)</li>
+                <li>It gave more information about the collision that I would use later on.</li>
+            </ul>
             
+
+            <p class="indent">At first, the geometrical problem was how to determine if a line and circle were colliding or not. I attempted approaching the 
+                problem by myself at first, then consulted some online resources for a hint after a while. Once I grasped the concept I worked out 
+                the algebra myself, and replicated it in the online calculator Desmos. Once I did this, I realized there was another problem for 
+                determining if a fruit is cut.
+            </p>
+            <figure>
+                <img src="media/FruitNinja/fruitninja-menufruit.jpg" alt="">
+                <figcaption>A screenshot from <a href="https://www.gameuidatabase.com/gameData.php?id=1312">Game UI Database</a> of the pre-game menu. An example of the fruit I used to test is in the 
+                    bottom right.</figcaption>
+            </figure>
+            <p class="indent half-screen">I played around with the original game to research the mechanics, specifically how the game determined 
+                if a fruit was cut or not. I used a fruit the game has on its menu that didn’t move, slowly cutting it in different ways. 
+                I determined that a fruit is considered cut if the distance from the entry point to the cursor is equal to or greater than a 
+                certain threshold. To calculate this, I needed to know the exact point the player’s swipe entered the fruit as well as the current 
+                position of the cursor.
+            </p>
+            <p class="indent half-screen">In a circle-line collision, there can be up to two intersection points. To determine which point is the 
+                first,I added a parameterization to my equations to represent the time from the origin point to the end of the line segment in 
+                this collision. I created an equation and inserted it into the Desmos software, comparing the “time” that each intersection point 
+                occurred. Seeing that it worked as it should, I start implementing the equations into my Unity project with C#. However, I ran 
+                into an error when testing that would always cause my program to crash. I tracked down the issue into my math, and realized that 
+                I had failed to account for completely vertical slices. When a line is completely vertical, its slope is unidentified since it 
+                would be dividing by 0. To handle this scenario I added a conditional statement that used a vertical line equation to get the 
+                point I needed.
+            </p>
+            <figure>
+                <img src="media/FruitNinja/desmos-line-circle.png" alt="">
+                <figcaption>The <a href="https://www.desmos.com/calculator/nqkjsmalc6">desmos graph</a> that I used to check if my math was corrrect.</figcaption>
+            </figure>
+            <h3>Masking</h3>
+            <p class="indent">This assignment only required us to have the fruit in our project be deleted after they were cut. However, once I 
+                found out the details of the project I was immediately determined to recreate the visual slice; fruit being split into two 
+                segments. I asked my TA how one might approach that challenge, and she explained the general idea of using the original fruit 
+                object and creating a new second object. Each object would show half of their sprite, effectively resulting in two split segments. 
+                That is the path that I ended up following. I understood the concept somewhat; the real challenge laid in exactly how to correctly 
+                rotate (and actually use) the masks in unity. 
+            </p>
+            <p class="indent">At first I had settled for having the masks not rotate; they would result in the same two shapes always being made 
+                after a fruit would be cut. However, after working on collision math and programming I realized I already had the information 
+                needed to find the angle the player had cut the fruit. My code was already defining a line that represented the player’s cutting 
+                gesture; I just needed to convert that into an angle and rotate the masks accordingly. I quickly became excited at this idea; 
+                both because it would make the cut fruit behave more realistically, but also because it would add another layer of challenge 
+                (not too challenging) to the project.
+            </p>
+            <p class="indent">While attempting to implement the masks, I ran into several issues. First, I had no idea how to apply a mask to only one 
+                object; by default a mask would hide any object in its area. Second, I had to rotate as well as offset the mask, since they were 
+                in a rectangle shape, and I only wanted half of each object to be hidden. The third and most important issue was that the angles 
+                were not correctly corresponding to the player’s gesture.
+            </p>
+            <figure>
+                <img src="media/FruitNinja/testing-slices.png" alt="">
+                <figcaption>An example of testing the results of slicing; the empty space in the middle of the fruit shows that the masks are 
+                    overlapping - which should not have been happening.</figcaption>
+            </figure>
+            <p class="indent half-screen">The first two issues were easy enough to solve; reading documentation and forums helped quite a bit. The third issue was 
+                difficult because I didn’t know where my code had gone wrong. Was it my algebra? Did I input the equations incorrectly?  Was I 
+                using the wrong trigonometric functions to get an angle? I resorted to creating several instances of fruit that I could test 
+                cutting and then inspecting the resulting angle the masks took. I found there was no discernible direct relation between the 
+                players input and the result (although there was some kind of pattern). I gathered from this observation that I had messed up 
+                one of my equations, so I went back to my math code and ran through it line by line, comparing it with my algebra from Desmos 
+                (since it had shown the visual results I knew it was correct). I found an error I made when copying code; it was similar to what 
+                I had copied but I forgot to change a variable or two. Changing this fixed the rotation and the cut fruit correctly correlated to 
+                the player’s gestures.
+            </p>
+            <h3>Reflection</h3>
+            <p>This project was a lot of fun to work on - it was also very frustrating. I had never worked with masks before and the mathematical 
+                errors were difficult to find. Despite those hardships I did enjoy pinpointing the exact spot that I had made an error, and the 
+                resulting resolution of the output. Looking back, there were several small features I wish I had attempted to add, such as 
+                offsetting the masks to reflect precisely where the player had swiped (and not just through the center). Most importantly, I have 
+                learned the lesson of checking my code’s output as I gradually build it up, so that I don’t have to take the pain of checking an 
+                untested mountain of code. In the end I am still proud of what I got accomplished, especially because of the struggle I went 
+                through.
+            </p>
+            </div>
         </main>
         </div>
         <footer>
