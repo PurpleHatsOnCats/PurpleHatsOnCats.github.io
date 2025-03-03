@@ -685,7 +685,7 @@ div.copyright{
         grid-row: span 1;
     }
 }
-@media screen and (min-width: 1640px){
+@media screen and (min-width: 1400px){
     #projects .project{
         width:48%;
     }
