@@ -15,10 +15,12 @@ body{
     padding-top: calc(64px + 3rem);
 }
 
+
 div.nav-location{
     position: relative;
     top:-112px;
 }
+
 
 /* FONTS */
 @font-face {
@@ -45,6 +47,7 @@ div.nav-location{
 .serif {
     font-family: serif;
 }
+
 
 /* DIV STYLES */
 div.green{
@@ -79,6 +82,8 @@ div.black{
 div.dark-blue, div.red, div.blue, div.black{
     color: white;
 }
+
+
 
 
 /* GENERIC STYLES */
@@ -131,16 +136,19 @@ em{
     width:100%;
 }
 /* Long Form content */
-p.indent, div.longForm ul, div.longForm ol{
+p.indent{
     text-indent:2em;
+    
+}
+div.longForm ul, div.longForm ol{
+    padding-left: 2em;
+    list-style-position: outside;
 }
 div.longForm ul{
     list-style-type:disc;
-    list-style-position: inside;
 }
 div.longForm ol{
     list-style-type:decimal;
-    list-style-position: inside;
 }
 div.longForm>*{
     padding:0 1rem 1rem 1rem;
@@ -154,8 +162,12 @@ div.longForm *{
     grid-column: span 2;
 }
 div.longForm figure{
-    width:100%;
+    width:max(40%,20em);
     grid-column: span 1;
+    float:right;
+}
+div.longForm figure.float-left{
+    float:left;
 }
 figure img{
     width:100%;
@@ -170,14 +182,22 @@ div.longForm h3, div.longForm h2{
 }
 div.longForm{
     font-size: 1.2em;
-    margin: 0 5em;
-    display:grid;
+    margin: 0 1em;
+    /* display:grid; */
     grid-template-columns: 1fr 1fr;
 }
 div.longForm div.intro{
     display:grid;
     grid-template-columns: 60px 30px 1fr 60px 30px;
-    grid-template-rows: 30px 60px 1fr 60px 30px;
+    grid-template-rows: 30px 60px min-content 60px 30px;
+}
+div.longForm div.intro-content{
+    height:min-content;
+    grid-column: 3/-3;
+    grid-row:2/-2;
+}
+div.longForm div.intro-content p{
+    padding-right:1em;
 }
 div.longForm div.intro div.red{
     grid-column:1/2;
@@ -195,13 +215,16 @@ div.longForm div.intro div.yellow+div.red+div.yellow{
     grid-column:-2/-1;
     grid-row:-2/-1;
 }
+div.longForm div.intro figure{
+    grid-column: -4/-2;
+}
 div.longForm div.intro p{
     grid-column:1/-1;
     grid-row:3/4;
-    display:flex;
     flex-direction: column;
     justify-content: center;
 }
+
 
 /* NAVIGATION */
 #nav-menu input{
@@ -223,15 +246,16 @@ div.longForm div.intro p{
 }
 #title-bar label{
     cursor: pointer;
-    
+   
     height: 100%;
     text-wrap: nowrap;
     font-family: inherit;
     font-size: inherit;
     color:inherit;
-    
+   
     grid-row: 1/2;
     grid-column: 1/2;
+
 
     visibility:hidden;
     display:flex;
@@ -287,7 +311,7 @@ div.longForm div.intro p{
     width:100%;
     height: 100%;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     color:white;
     pointer-events: none;
 }
@@ -309,6 +333,7 @@ div.longForm div.intro p{
     flex: 0 0 3em;
 }
 
+
 a.bright:link{
     color:#ffffff;
 }
@@ -328,6 +353,7 @@ a.bright:active{
     color:#D20537;
 }
 
+
 /* INTRO SECTION */
 div#intro{
     grid-template-rows: 100px min-content 25px 25px 25px 25px 60px min-content 25px;
@@ -341,6 +367,7 @@ div#intro{
     background: url('../media/grass-banner.png') right top repeat;
     background-size: auto;
 }
+
 
 #intro-heading{
     grid-row: 1/3;
@@ -381,6 +408,7 @@ div#intro{
     grid-row: -4/-3;
     grid-column: 2/3;
 }
+
 
 /* MAIN SECTION */
 #projects .flex-container{
@@ -521,8 +549,8 @@ div.screenshot img{
 .carousel input:checked+div, .carousel input:checked+label+div{
     display:block;
 }
-.carousel input:checked+label+div+input+label+div+label, 
-.carousel input:checked+div+input+label+div+input+label, 
+.carousel input:checked+label+div+input+label+div+label,
+.carousel input:checked+div+input+label+div+input+label,
 .carousel input:checked+div+input+label+div+label{
     /* next */
     display:block;
@@ -543,7 +571,7 @@ div.screenshot img{
     display:none;
 }
 .carousel label{
-    width:min-content; 
+    width:min-content;
     height:min-content;
     display:none;
     line-height: 0;
@@ -580,6 +608,8 @@ div.text-block, #intro-description p, div.icon{
 }
 
 
+
+
 div.span-one{
     grid-column: span 4;
 }
@@ -604,6 +634,7 @@ div.height-threehalves{
 div.height-half{
     grid-row: span 1;
 }
+
 
 /* FOOTER */
 #contact{
@@ -685,7 +716,20 @@ div.copyright{
         grid-row: span 1;
     }
 }
-@media screen and (min-width: 1400px){
+@media screen and (min-width: 1200px){
+    div#projects{
+        margin-right:5em;
+        margin-left: 5em;
+    }
+    div.longForm{
+        margin: 0 5em;
+    }
+}
+@media screen and (min-width: 1600px){
+    div#projects{
+        margin-right:0;
+        margin-left: 0;
+    }
     #projects .project{
         width:48%;
     }
