@@ -193,8 +193,8 @@ div.longForm div.intro{
 }
 div.longForm div.intro-content{
     height:min-content;
-    grid-column: 3/-3;
-    grid-row:2/-2;
+    grid-column: 1/-1;
+    grid-row:3/-3;
 }
 div.longForm div.intro-content p{
     padding-right:1em;
@@ -216,7 +216,8 @@ div.longForm div.intro div.yellow+div.red+div.yellow{
     grid-row:-2/-1;
 }
 div.longForm div.intro figure{
-    grid-column: -4/-2;
+    margin-left:1em;
+    width: max(10em, 50%);
 }
 div.longForm div.intro p{
     grid-column:1/-1;
@@ -224,7 +225,9 @@ div.longForm div.intro p{
     flex-direction: column;
     justify-content: center;
 }
-
+h3.under-intro{
+    padding-top:0;
+}
 
 /* NAVIGATION */
 #nav-menu input{
@@ -714,6 +717,11 @@ div.copyright{
     }
     div.height-half{
         grid-row: span 1;
+    }
+    div.longForm div.intro-content{
+        height:min-content;
+        grid-column: 3/-3;
+        grid-row:2/-2;
     }
 }
 @media screen and (min-width: 1200px){
