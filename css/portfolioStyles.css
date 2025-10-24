@@ -552,6 +552,7 @@ div.screenshot img{
 .carousel input:checked+div, .carousel input:checked+label+div{
     display:block;
 }
+.carousel input:checked+label+div+input+label+div+input+label,
 .carousel input:checked+label+div+input+label+div+label,
 .carousel input:checked+div+input+label+div+input+label,
 .carousel input:checked+div+input+label+div+label{
