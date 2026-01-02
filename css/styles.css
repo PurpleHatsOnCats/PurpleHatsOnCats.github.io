@@ -1,0 +1,22 @@
+.card {
+    width: 300px;
+}
+
+.rollover-container {
+    position: relative;
+    cursor: default;
+}
+
+.rollover-text {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+}
+
+.rollover-container > .rollover-icon:hover ~ .rollover-text{
+    display: block;
+}

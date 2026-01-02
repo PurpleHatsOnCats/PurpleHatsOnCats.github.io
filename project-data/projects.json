@@ -1,0 +1,31 @@
+{
+    "projects": [
+        {
+            "title": "Gooze Gardener",
+            "type": "Class Project",
+            "time": {
+                "year": 2025,
+                "season": "fall",
+                "length": "semester"
+            },
+            "tools": [
+                "Unity",
+                "Aseprite"
+            ],
+            "team": {
+                "size": 5,
+                "roles": [
+                    "artist",
+                    "programmer"
+                ]
+            },
+            "points": [
+                "Developed a game using SCRUM / sprint development cycle",
+                "Created a physics simulations to render custom fluid",
+                "Designed sprites for tilemaps and items"
+            ],
+            "game-page": false,
+            "info-page": false
+        }
+    ]
+}
