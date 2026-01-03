@@ -10,6 +10,7 @@
             },
             "tools": [
                 "Unity",
+                "C#",
                 "Aseprite"
             ],
             "team": {
@@ -39,7 +40,7 @@
                 "length": "1 semester"
             },
             "tools": [
-                
+                "Boardgame"
             ],
             "team": {
                 "size": 5,
@@ -56,7 +57,74 @@
             "buildPage": false,
             "infoPage": false,
             "media": [
-                {"src":"catNap/gg_primary.png", "alt":"3 Colored slimes"}
+                {"src":"catNap/cn_full.jpg", "alt":"All components of the game presented on a table"},
+                {"src":"catNap/cn_wall.jpg", "alt":"A side view of the board with mice hiding"},
+                {"src":"catNap/board.jpg", "alt":"An overhead view of the board"},
+                {"src":"catNap/cn_pieces.jpg", "alt":"A closeup of all of the mice and the cat"}
+            ]
+        },
+        {
+            "title": "Game Not Included",
+            "type": "Game Jam",
+            "time": {
+                "year": 2024,
+                "season": "Summer",
+                "length": "2 weeks"
+            },
+            "tools": [
+                "Flowlab",
+                "MS Paint"
+            ],
+            "team": {
+                "size": 1,
+                "roles": [
+                    "game designer",
+                    "programmer",
+                    "artist"
+                ]
+            },
+            "points": [
+                "Programmed windows system inside of game",
+                "Won 5th overall in game jam, 40 participants",
+                "Project finished on tight deadline"
+            ],
+            "buildPage": false,
+            "infoPage": false,
+            "media": [
+                {"src":"gameNotFound/gnf_gameplay1.png", "alt":"Multiple windows open within the game"},
+                {"src":"gameNotFound/gnf_gameplay2.png", "alt":"A view of the kitchen within the game"}
+            ]
+        },
+        {
+            "title": "Bubble Borne",
+            "type": "Game Jam",
+            "time": {
+                "year": 2025,
+                "season": "Spring",
+                "length": "2 Days"
+            },
+            "tools": [
+                "Unity",
+                "C#"
+            ],
+            "team": {
+                "size": 8,
+                "roles": [
+                    "programmer"
+                ]
+            },
+            "points": [
+                "Collaborated with 7 other RIT students with diverse specialties",
+                "Programmed physics interactions for main gameplay, simulating water currents",
+                "Incorporated teammates feedback and needs into workflow"
+            ],
+            "buildPage": false,
+            "infoPage": false,
+            "media": [
+                {"src":"bubbleBorne/bb_gameplay1.png", "alt":"The player moving the bubble around a corner"},
+                {"src":"bubbleBorne/bb_gameplay2.png", "alt":"The player dodging an encounter with a crab"},
+                {"src":"bubbleBorne/bb_ending1.png", "alt":"The bubble just below the surface of the ocean"},
+                {"src":"bubbleBorne/bb_ending2.png", "alt":"The ending of the game, the bubble surfacing from the ocean"}
             ]
         }
     ]

@@ -1,18 +1,20 @@
 function Project({ project }) {
     return (
-        <div className="card">
+        <div className="card project">
             <div className="card-image">
                 <figure className="image is-4by3">
-                    <img
-                        src={"./media/projects/" + project.media[0].src}
-                        alt={project.media[0].alt}
-                    />
+                    <div className="carousel">
+                        <img
+                            src={"./media/projects/" + project.media[0].src}
+                            alt={project.media[0].alt}
+                        />
+                    </div>
                 </figure>
             </div>
             <div className="card-content">
-                <p className="title is-4">{project.title}</p>
-                <p className="subtitle is-5">{project.type} - {project.time.season} {project.time.year}</p>
-                <span className="icons is-flex">
+                <p className="title is-4 has-text-centered">{project.title}</p>
+                <p className="subtitle is-5 has-text-centered">{project.type} - {project.time.season} {project.time.year}</p>
+                <span className="icons is-flex is-justify-content-center">
 
                     {/* Team Icon */}
                     <Rollover
@@ -34,18 +36,19 @@ function Project({ project }) {
                             icon={getIconFromText(tool)}
                             iconText={""}
                             rolloverText={tool}
+                            key={tool}
                         ></Rollover>
                     )}
                 </span>
                 <div className="content">
-                    <ul>
-                        {project.points.map((item) => (<li>{item}</li>))}
+                    <ul className="is-justify-center">
+                        {project.points.map((item, index) => (<li key={index}>{item}</li>))}
                     </ul>
                 </div>
             </div>
-            <footer class="card-footer">
-                {returnIfTrue(project.buildPage, <a href={"#" + project.buildPage} class="card-footer-item">Build Page</a>)}
-                {returnIfTrue(project.infoPage, <a href={"#" + project.infoPage} class="card-footer-item">More Info</a>)}
+            <footer className="card-footer">
+                {returnIfTrue(project.buildPage, <a href={"#" + project.buildPage} className="card-footer-item">Build Page</a>)}
+                {returnIfTrue(project.infoPage, <a href={"#" + project.infoPage} className="card-footer-item">More Info</a>)}
             </footer>
         </div>
     )
@@ -80,14 +83,19 @@ const getIconFromText = (text) => {
     let name;
     switch (text) {
         case "Unity": name = "fa-brands fa-unity"; break;
-        case "Aseprite": return (<img src="./media/icons/aseprite-icon.png"></img>); break;
+        case "Aseprite": return (<img src="./media/icons/aseprite_icon.png"></img>);
         case "Clock": name = "fa-solid fa-clock"; break;
+        case "Flowlab": return (<img src="./media/icons/flowlab_icon.png"></img>);
+        case "MS Paint": return (<img src="./media/icons/mspaint_icon.png"></img>);
+        case "Javascript": return (<img src="./media/icons/javascript_icon.png"></img>);
+        case "C#": return (<img src="./media/icons/csharp_icon.png"></img>);
+        case "Boardgame": name = "fa-solid fa-dice"; break;
         default: name = ""; break;
     }
     return (<i className={name}></i>);
 }
 const returnIfTrue = (bool, returnData) => {
-    if(bool){
+    if (bool) {
         return returnData;
     }
     return "";

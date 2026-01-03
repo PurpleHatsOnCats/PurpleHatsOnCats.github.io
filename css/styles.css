@@ -29,3 +29,12 @@
 .icons {
     gap:0.5em;
 }
+.project{
+    width:100%
+}
+.is-justify-center{
+    justify-self: center;
+}
+.carousel{
+    
+}
