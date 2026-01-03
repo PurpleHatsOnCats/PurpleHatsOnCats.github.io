@@ -5,6 +5,11 @@
 .rollover-container {
     position: relative;
     cursor: default;
+    width:min-content;
+}
+
+.rollover-icon{
+    text-wrap: nowrap;
 }
 
 .rollover-text {
@@ -13,10 +18,14 @@
     z-index: 1000;
     bottom: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-1em);
     text-wrap: nowrap;
 }
 
 .rollover-container > .rollover-icon:hover ~ .rollover-text{
     display: block;
+}
+
+.icons {
+    gap:0.5em;
 }

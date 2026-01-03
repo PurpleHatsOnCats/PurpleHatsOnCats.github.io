@@ -5,8 +5,8 @@
             "type": "Class Project",
             "time": {
                 "year": 2025,
-                "season": "fall",
-                "length": "semester"
+                "season": "Fall",
+                "length": "1 semester"
             },
             "tools": [
                 "Unity",
@@ -24,8 +24,40 @@
                 "Created a physics simulations to render custom fluid",
                 "Designed sprites for tilemaps and items"
             ],
-            "game-page": false,
-            "info-page": false
+            "buildPage": false,
+            "infoPage": false,
+            "media": [
+                {"src":"goozeGardener/gg_primary.png", "alt":"3 Colored slimes"}
+            ]
+        },
+        {
+            "title": "Cat Nap",
+            "type": "Class Project",
+            "time": {
+                "year": 2025,
+                "season": "Spring",
+                "length": "1 semester"
+            },
+            "tools": [
+                
+            ],
+            "team": {
+                "size": 5,
+                "roles": [
+                    "game designer",
+                    "team lead"
+                ]
+            },
+            "points": [
+                "Produced a board game through full development process",
+                "Ran player tests and created various implementations",
+                "Practiced documentation with living documents"
+            ],
+            "buildPage": false,
+            "infoPage": false,
+            "media": [
+                {"src":"catNap/gg_primary.png", "alt":"3 Colored slimes"}
+            ]
         }
     ]
 }
