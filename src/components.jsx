@@ -1,15 +1,13 @@
+import { useState } from 'react';
+
 function Project({ project }) {
     return (
         <div className="card project">
             <div className="card-image">
-                <figure className="image is-4by3">
-                    <div className="carousel">
-                        <img
-                            src={"./media/projects/" + project.media[0].src}
-                            alt={project.media[0].alt}
-                        />
-                    </div>
-                </figure>
+                <Carousel
+                    images={project.media}
+                >
+                </Carousel>
             </div>
             <div className="card-content">
                 <p className="title is-4 has-text-centered">{project.title}</p>
@@ -70,6 +68,42 @@ function Rollover({ icon, iconText = "", rolloverText = "" }) {
     );
 }
 
+function Carousel({ images = [] }) {
+    const [slide, setslide] = useState(0);
+    return (
+        <div className="carousel">
+            <div className="carousel-images">
+                {images.map((img, index) => (
+                    <img
+                        src={"./media/projects/" + img.src}
+                        alt={img.alt}
+                        style={{ transform: `translate(-${(slide) * 100}%)` }}
+                        key={index}
+                    ></img>
+                ))}
+            </div>
+            <button
+                className="button carousel-previous"
+                onClick={() => { setslide(clampNum(slide - 1, 0, images.length - 1)); console.log(slide); }}
+                style={{ display: `${slide > 0 ? "" : "none"}` }}
+            >
+                <span class="icon">
+                    <i class="fa-solid fa-caret-left"></i>
+                </span>
+            </button>
+            <button
+                className="button carousel-next"
+                onClick={() => { setslide(clampNum(slide + 1, 0, images.length - 1)); console.log(slide); }}
+                style={{ display: `${slide < images.length-1 ? "" : "none"}` }}
+            >
+                <span class="icon">
+                    <i class="fa-solid fa-caret-right"></i>
+                </span>
+            </button>
+        </div>
+    );
+}
+
 const getIconFromNumber = (num) => {
     let name;
     switch (num) {
@@ -99,6 +133,9 @@ const returnIfTrue = (bool, returnData) => {
         return returnData;
     }
     return "";
+}
+const clampNum = (num, min, max) => {
+    return num > min ? (num < max ? num : max) : min;
 }
 
 export { Project };

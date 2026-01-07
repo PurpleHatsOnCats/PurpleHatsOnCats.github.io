@@ -58,8 +58,8 @@
             "infoPage": false,
             "media": [
                 {"src":"catNap/cn_full.jpg", "alt":"All components of the game presented on a table"},
-                {"src":"catNap/cn_wall.jpg", "alt":"A side view of the board with mice hiding"},
-                {"src":"catNap/board.jpg", "alt":"An overhead view of the board"},
+                {"src":"catNap/cn_walls.jpg", "alt":"A side view of the board with mice hiding"},
+                {"src":"catNap/cn_board.jpg", "alt":"An overhead view of the board"},
                 {"src":"catNap/cn_pieces.jpg", "alt":"A closeup of all of the mice and the cat"}
             ]
         },

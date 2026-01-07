@@ -1,6 +1,6 @@
 import { loadJSON } from "./load.js";
 import { Project } from "./components.jsx";
-import { StrictMode } from 'react'
+import { StrictMode} from 'react'
 import { createRoot } from 'react-dom/client'
 
 const projectDataLocation = "project-data/projects.json";

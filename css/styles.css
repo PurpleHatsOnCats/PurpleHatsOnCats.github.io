@@ -2,13 +2,26 @@
     width: 300px;
 }
 
+.icons {
+    gap: 0.5em;
+}
+
+.project {
+    width: 100%
+}
+
+.is-justify-center {
+    justify-self: center;
+}
+
+/* Rollover Styling */
 .rollover-container {
     position: relative;
     cursor: default;
-    width:min-content;
+    width: min-content;
 }
 
-.rollover-icon{
+.rollover-icon {
     text-wrap: nowrap;
 }
 
@@ -22,19 +35,51 @@
     text-wrap: nowrap;
 }
 
-.rollover-container > .rollover-icon:hover ~ .rollover-text{
+.rollover-container>.rollover-icon:hover~.rollover-text {
     display: block;
 }
 
-.icons {
-    gap:0.5em;
+/* Carousel Styling */
+.carousel {
+    overflow: hidden;
 }
-.project{
-    width:100%
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
 }
-.is-justify-center{
-    justify-self: center;
+
+.carousel-images img {
+    transition: 1s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.carousel{
-    
+
+.carousel-previous {
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 12px 0 0 0;
+}
+
+.carousel-next {
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 0 12px 0 0;
+}
+
+.carousel-previous,
+.carousel-next {
+    position: absolute;
+    display: none;
+    opacity: 0.5;
+}
+
+.carousel:hover>.carousel-previous,
+.carousel:hover>.carousel-next {
+    display: block;
+}
+
+.carousel-previous:hover,
+.carousel-next:hover {
+    opacity: 1.0;
 }
