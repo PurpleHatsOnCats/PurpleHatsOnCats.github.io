@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {getImageURL} from './image-util'
 
 function Project({ project }) {
     return (
@@ -75,7 +76,7 @@ function Carousel({ images = [] }) {
             <div className="carousel-images">
                 {images.map((img, index) => (
                     <img
-                        src={"./media/projects/" + img.src}
+                        src={getImageURL("projects/" + img.src)}
                         alt={img.alt}
                         style={{ transform: `translate(-${(slide) * 100}%)` }}
                         key={index}
@@ -117,12 +118,12 @@ const getIconFromText = (text) => {
     let name;
     switch (text) {
         case "Unity": name = "fa-brands fa-unity"; break;
-        case "Aseprite": return (<img src="./media/icons/aseprite_icon.png"></img>);
+        case "Aseprite": return (<img src={getImageURL("icons/aseprite_icon.png")}></img>);
         case "Clock": name = "fa-solid fa-clock"; break;
-        case "Flowlab": return (<img src="./media/icons/flowlab_icon.png"></img>);
-        case "MS Paint": return (<img src="./media/icons/mspaint_icon.png"></img>);
-        case "Javascript": return (<img src="./media/icons/javascript_icon.png"></img>);
-        case "C#": return (<img src="./media/icons/csharp_icon.png"></img>);
+        case "Flowlab": return (<img src={getImageURL("icons/flowlab_icon.png")}></img>);
+        case "MS Paint": return (<img src={getImageURL("icons/mspaint_icon.png")}></img>);
+        case "Javascript": return (<img src={getImageURL("icons/javascript_icon.png")}></img>);
+        case "C#": return (<img src={getImageURL("icons/csharp_icon.png")}></img>);
         case "Boardgame": name = "fa-solid fa-dice"; break;
         default: name = ""; break;
     }
@@ -137,5 +138,6 @@ const returnIfTrue = (bool, returnData) => {
 const clampNum = (num, min, max) => {
     return num > min ? (num < max ? num : max) : min;
 }
+
 
 export { Project };
