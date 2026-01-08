@@ -3,7 +3,7 @@ import { Project } from "./components.jsx";
 import { StrictMode} from 'react'
 import { createRoot } from 'react-dom/client'
 
-const projectDataLocation = "project-data/projects.json";
+const projectDataLocation = "https://purplehatsoncats.github.io/project-data/projects.json";
 const projects = (await loadJSON(projectDataLocation)).projects;
 console.log(projects);
 
