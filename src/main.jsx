@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client'
 
 const projectDataLocation = "https://raw.githubusercontent.com/PurpleHatsOnCats/PurpleHatsOnCats.github.io/refs/heads/main/project-data/projects.json";
 const projects = (await loadJSON(projectDataLocation)).projects;
+console.log(projectDataLocation);
 console.log(projects);
 
 createRoot(document.getElementById('root')).render(
