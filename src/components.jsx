@@ -87,8 +87,8 @@ function Carousel({ images = [] }) {
                 onClick={() => { setslide(clampNum(slide - 1, 0, images.length - 1)); console.log(slide); }}
                 style={{ display: `${slide > 0 ? "" : "none"}` }}
             >
-                <span class="icon">
-                    <i class="fa-solid fa-caret-left"></i>
+                <span className="icon">
+                    <i className="fa-solid fa-caret-left"></i>
                 </span>
             </button>
             <button
@@ -96,8 +96,8 @@ function Carousel({ images = [] }) {
                 onClick={() => { setslide(clampNum(slide + 1, 0, images.length - 1)); console.log(slide); }}
                 style={{ display: `${slide < images.length-1 ? "" : "none"}` }}
             >
-                <span class="icon">
-                    <i class="fa-solid fa-caret-right"></i>
+                <span className="icon">
+                    <i className="fa-solid fa-caret-right"></i>
                 </span>
             </button>
         </div>
