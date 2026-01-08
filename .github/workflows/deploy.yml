@@ -8,8 +8,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on:
-      - windows-latest
+    runs-on: windows-latest
 
     steps:
       # Checkout Repo
