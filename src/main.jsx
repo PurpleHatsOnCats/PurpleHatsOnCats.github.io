@@ -1,8 +1,8 @@
 import { loadJSON } from "./load.js";
 import { Project } from "./components.jsx";
-import { StrictMode} from 'react'
-import { createRoot } from 'react-dom/client'
-import projects from "./project-data/projects.json"
+import { StrictMode} from 'react';
+import { createRoot } from 'react-dom/client';
+import projects from './project-data/projects.json';
 
 const projectDataLocation = "./project-data/projects.json";
 console.log(projectDataLocation);
