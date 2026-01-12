@@ -1,3 +1,4 @@
+import React from 'react'
 async function loadJSON (url){
     let returnValue;
     console.log("Fetching from: " + url);
@@ -11,4 +12,11 @@ async function loadJSON (url){
     });
     return returnValue;
 }
-export {loadJSON};
+
+function getImage(imageName) {
+    console.log(imageName);
+    return new URL(`./media/` + imageName,import.meta.url).href;
+}
+
+
+export {loadJSON, getImage};

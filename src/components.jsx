@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import {getImageURL} from './image-util'
+//import {require} from 'webpack';
+import {getImage} from './load.js'
 
 function Project({ project }) {
     return (
@@ -76,7 +77,7 @@ function Carousel({ images = [] }) {
             <div className="carousel-images">
                 {images.map((img, index) => (
                     <img
-                        src={getImageURL("projects/" + img.src)}
+                        src={getImage("projects/" + img.src)}
                         alt={img.alt}
                         style={{ transform: `translate(-${(slide) * 100}%)` }}
                         key={index}
@@ -85,7 +86,7 @@ function Carousel({ images = [] }) {
             </div>
             <button
                 className="button carousel-previous"
-                onClick={() => { setslide(clampNum(slide - 1, 0, images.length - 1)); console.log(slide); }}
+                onClick={() => { setslide(clampNum(slide - 1, 0, images.length - 1));}}
                 style={{ display: `${slide > 0 ? "" : "none"}` }}
             >
                 <span className="icon">
@@ -94,7 +95,7 @@ function Carousel({ images = [] }) {
             </button>
             <button
                 className="button carousel-next"
-                onClick={() => { setslide(clampNum(slide + 1, 0, images.length - 1)); console.log(slide); }}
+                onClick={() => { setslide(clampNum(slide + 1, 0, images.length - 1));}}
                 style={{ display: `${slide < images.length-1 ? "" : "none"}` }}
             >
                 <span className="icon">
@@ -118,12 +119,12 @@ const getIconFromText = (text) => {
     let name;
     switch (text) {
         case "Unity": name = "fa-brands fa-unity"; break;
-        case "Aseprite": return (<img src={getImageURL("icons/aseprite_icon.png")}></img>);
+        case "Aseprite": return (<img src={getImage("icons/aseprite_icon.png")}></img>);
         case "Clock": name = "fa-solid fa-clock"; break;
-        case "Flowlab": return (<img src={getImageURL("icons/flowlab_icon.png")}></img>);
-        case "MS Paint": return (<img src={getImageURL("icons/mspaint_icon.png")}></img>);
-        case "Javascript": return (<img src={getImageURL("icons/javascript_icon.png")}></img>);
-        case "C#": return (<img src={getImageURL("icons/csharp_icon.png")}></img>);
+        case "Flowlab": return (<img src={getImage("icons/flowlab_icon.png")}></img>);
+        case "MS Paint": return (<img src={getImage("icons/mspaint_icon.png")}></img>);
+        case "Javascript": return (<img src={getImage("icons/javascript_icon.png")}></img>);
+        case "C#": return (<img src={getImage("icons/csharp_icon.png")}></img>);
         case "Boardgame": name = "fa-solid fa-dice"; break;
         default: name = ""; break;
     }
