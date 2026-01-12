@@ -15,7 +15,7 @@ async function loadJSON (url){
 
 function getImage(imageName) {
     console.log(imageName);
-    return new URL(`../src/media/` + imageName,import.meta.url).href;
+    return new URL(`../assets/` + imageName,import.meta.url).href;
 }
 
 
