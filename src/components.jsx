@@ -140,7 +140,7 @@ function Navbar() {
                     <a className="navbar-item">
                         Contact
                     </a>
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="/assets/Vandivere_Seth_Resume.pdf">
                         Resume
                     </a>
                 </div>
