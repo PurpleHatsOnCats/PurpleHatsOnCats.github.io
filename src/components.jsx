@@ -131,7 +131,7 @@ function Navbar() {
                 </div>
 
                 <div className="navbar-end">
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="#intro">
                         Intro
                     </a>
                     <a className="navbar-item">
