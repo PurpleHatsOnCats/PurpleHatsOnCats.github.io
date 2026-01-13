@@ -1,13 +1,5 @@
-.card {
-    width: 300px;
-}
-
 .icons {
     gap: 0.5em;
-}
-
-.project {
-    width: 100%
 }
 
 .is-justify-center {
@@ -18,7 +10,7 @@
     width: max-content;
     margin-left: auto;
     margin-right: auto;
-    max-width: calc(20vw + 20em);
+    max-width: min(calc(20vw + 20em), 100%);
 }
 
 #navbar-center{
@@ -99,6 +91,15 @@
 .carousel-previous:hover,
 .carousel-next:hover {
     opacity: 1.0;
+}
+
+/* Projects */
+.project-grid{
+    width:100%;
+}
+.project {
+    width:100%;
+    height:min-content;
 }
 
 @media screen and (min-width: 600px) {

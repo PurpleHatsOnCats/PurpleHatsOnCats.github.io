@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { getIconFromNumber, getIconFromText, returnIfTrue, clampNum, getImage } from './utils.jsx';
 import SethSVG from "./TextToSvgComponent.jsx";
 
-function Project({ project }) {
+function Project({ project, className}) {
     return (
-        <div className="card project">
+        <div className={`card project ${className}`}>
             <div className="card-image">
                 <Carousel
                     images={project.media}
@@ -110,18 +110,13 @@ function Navbar() {
         <nav className="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item px-5 py-2" href="">
-                    <SethSVG width="800" height="160" fill="none" xmlns="http://www.w3.org/2000/svg" />
+                    <SethSVG width="800" height="160" fill="hsl(0, 0%, 96%)" xmlns="http://www.w3.org/2000/svg" />
                 </a>
                 <div className="navbar-item" id="navbar-center">Professional Portfolio</div>
-                <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false"
+                <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" id="burger"
                     onClick={el => {
-                        console.log(el);
-                        const $target = document.getElementById("navbarMenu");
-
-                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                        el.target.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-
+                        document.querySelector("#burger").classList.toggle('is-active');
+                        document.querySelector("#navbarMenu").classList.toggle('is-active');
                     }}>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>

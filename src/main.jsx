@@ -19,8 +19,8 @@ createRoot(document.getElementById('root')).render(
       <Intro />
       <div className="block">
         <h2 className="title has-text-weight-semibold is-size-2">Projects</h2>
-        <div className="grid is-col-min-16 is-gap-5 project-grid">
-          {projects.map((project) => (<div className="cell project-cell" key={project.title}><Project project={project} /></div>))}
+        <div className="grid is-gap-5 project-grid is-col-min-10">
+          {projects.map((project) => (<Project project={project} key={project.title} className="cell"/>))}
         </div>
       </div>
     </div>
