@@ -14,9 +14,22 @@
     justify-self: center;
 }
 
-/* navbar{
-    position:fixed;
-} */
+#intro {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(20vw + 20em);
+}
+
+#navbar-center{
+    margin-left: auto;
+    margin-right: auto;
+    position:absolute;
+    left:50%;
+    transform: translate(-50%,-50%);
+    top:50%;
+    display:none;
+}
 
 /* Rollover Styling */
 .rollover-container {
@@ -86,4 +99,10 @@
 .carousel-previous:hover,
 .carousel-next:hover {
     opacity: 1.0;
+}
+
+@media screen and (min-width: 600px) {
+    #navbar-center{
+        display: inherit;
+    } 
 }
