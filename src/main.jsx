@@ -1,6 +1,6 @@
 import { loadJSON } from "./load.js";
-import { Project } from "./components.jsx";
-import { StrictMode} from 'react';
+import { Project, Navbar } from "./components.jsx";
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import projectsJSON from './project-data/projects.json';
 
@@ -12,9 +12,12 @@ console.log(projectDataLocation);
 console.log(projects);
 
 createRoot(document.getElementById('root')).render(
-    <StrictMode>
-      <div className="grid is-col-min-16 is-gap-5 mx-6 project-grid">
-        {projects.map((project) =>(<div className="cell project-cell" key={project.title}><Project project={project} /></div>))}
-      </div>
-    </StrictMode>
+  <StrictMode>
+    <div id="navbar">
+      <Navbar/>
+    </div>
+    <div className="grid is-col-min-16 is-gap-5 mx-6 project-grid">
+      {projects.map((project) => (<div className="cell project-cell" key={project.title}><Project project={project} /></div>))}
+    </div>
+  </StrictMode>
 );
