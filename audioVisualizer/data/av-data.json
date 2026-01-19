@@ -1,0 +1,24 @@
+{
+    "title":"Audio Visualizer",
+    "songs":[
+        {"name":"New Adventure Theme","file":"New Adventure Theme.mp3"},
+        {"name":"Peanuts Theme","file":"Peanuts Theme.mp3"},
+        {"name":"The Picard Song","file":"The Picard Song.mp3"}
+    ],
+    "sprites":[
+        {"file":"cat player.png","x":650,"y":100,"width":250,"height":250},
+        {"file":"cat_dance.png","x":150,"y":100,"width":150,"height":150}
+    ],
+    "startingUI":{
+        "showGradient" : true,
+        "showBars" : false,
+        "showCircles" : true,
+        "showNoise" : false,
+        "showInvert" : false,
+        "showEmboss" : false,
+        "analyzeType" : "frequency",
+        "distortionOn" : false,
+        "showImages" : true,
+        "showBlur" : false
+    }
+}
