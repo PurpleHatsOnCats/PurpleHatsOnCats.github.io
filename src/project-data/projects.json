@@ -1,6 +1,38 @@
 {
     "projects": [
         {
+            "title": "In C",
+            "type": "Class Project",
+            "time": {
+                "year": 2025,
+                "season": "Fall",
+                "length": "2 weeks"
+            },
+            "tools": [
+                "Max MSP",
+                "FL Studio"
+            ],
+            "team": {
+                "size": 1,
+                "roles": [
+                    "programmer",
+                    "audio engineer"
+                ]
+            },
+            "points": [
+                "Recreated music piece \"In C\" with programatic decision making",
+                "Used game AI to guide virtual musicians",
+                "Synthesized and mixed basic sounds"
+            ],
+            "buildPage": "https://drive.google.com/file/d/1-YE1AC-F8VERiy6lXFcGu25J9HuDdmn_/view",
+            "infoPage": false,
+            "media": [
+                {"video":false, "src":"inC/ic_presentation.png", "alt":"Project in presentation mode"},
+                {"video":false, "src":"inC/ic_musician.png", "alt":"Musician class"},
+                {"video":"<iframe src=\"https://www.youtube.com/embed/viOoWAcbWIU\" width=\"767\" height=\"431\" title=\"In C   Application Showcase\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"}
+            ]
+        },
+        {
             "title": "Gooze Gardener",
             "type": "Class Project",
             "time": {
@@ -22,11 +54,12 @@
             },
             "points": [
                 "Developed a game using SCRUM / sprint development cycle",
-                "Created a physics simulations to render custom fluid",
-                "Designed sprites for tilemaps and items"
+                "Created a physics simulation to render custom fluid",
+                "Conducted market research to understand similar products"
             ],
-            "buildPage": false,
+            "buildPage": "https://purplehatsoncats.itch.io/gooze-gardens",
             "infoPage": false,
+            "designDoc":"../assets/GoozeGardener_DD.pdf",
             "media": [
                 {"src":"goozeGardener/gg_primary.png", "alt":"3 Colored slimes"}
             ]
@@ -56,6 +89,7 @@
             ],
             "buildPage": false,
             "infoPage": false,
+            "designDoc":"../assets/CatNap_DD.pdf",
             "media": [
                 {"src":"catNap/cn_full.jpg", "alt":"All components of the game presented on a table"},
                 {"src":"catNap/cn_walls.jpg", "alt":"A side view of the board with mice hiding"},
@@ -88,7 +122,7 @@
                 "Won 5th overall in game jam, 40 participants",
                 "Project finished on tight deadline"
             ],
-            "buildPage": false,
+            "buildPage": "https://purplehatsoncats.itch.io/game-not-included",
             "infoPage": false,
             "media": [
                 {"src":"gameNotFound/gnf_gameplay1.png", "alt":"Multiple windows open within the game"},
@@ -118,7 +152,7 @@
                 "Programmed physics interactions for main gameplay, simulating water currents",
                 "Incorporated teammates feedback and needs into workflow"
             ],
-            "buildPage": false,
+            "buildPage": "https://azurlant.itch.io/bubble-borne",
             "infoPage": false,
             "media": [
                 {"src":"bubbleBorne/bb_gameplay1.png", "alt":"The player moving the bubble around a corner"},

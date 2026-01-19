@@ -21,6 +21,8 @@ const getIconFromText = (text) => {
         case "Javascript": return (<img src={getImage("icons/javascript_icon.png")}></img>);
         case "C#": return (<img src={getImage("icons/csharp_icon.png")}></img>);
         case "Boardgame": name = "fa-solid fa-dice"; break;
+        case "FL Studio": return (<img src={getImage("icons/flStudio_icon.png")}></img>);
+        case "Max MSP": return (<img src={getImage("icons/max_icon.png")}></img>);
         default: name = ""; break;
     }
     return (<i className={name}></i>);

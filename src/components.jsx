@@ -46,8 +46,9 @@ function Project({ project, className}) {
                 </div>
             </div>
             <footer className="card-footer">
-                {returnIfTrue(project.buildPage, <a href={"#" + project.buildPage} className="card-footer-item">Build Page</a>)}
+                {returnIfTrue(project.buildPage, <a href={project.buildPage} className="card-footer-item">Build Page</a>)}
                 {returnIfTrue(project.infoPage, <a href={"#" + project.infoPage} className="card-footer-item">More Info</a>)}
+                {returnIfTrue(project.designDoc, <a href={project.designDoc} className="card-footer-item">Design Document</a>)}
             </footer>
         </div>
     )
@@ -74,14 +75,23 @@ function Carousel({ images = [] }) {
     return (
         <div className="carousel">
             <div className="carousel-images">
-                {images.map((img, index) => (
+                {images.map((img, index) => {
+                    if (img.video){return (
+                    <div 
+                        className="slide" 
+                        dangerouslySetInnerHTML={{ __html: img.video }} 
+                        style={{ transform: `translate(-${(slide) * 100}%)` }}
+                        key={index}
+                    />)}
+                    else { return(
                     <img
+                        className="slide"
                         src={getImage("projects/" + img.src)}
                         alt={img.alt}
                         style={{ transform: `translate(-${(slide) * 100}%)` }}
                         key={index}
                     ></img>
-                ))}
+                )}})}
             </div>
             <button
                 className="button carousel-previous"
@@ -134,10 +144,10 @@ function Navbar() {
                     <a className="navbar-item" href="#intro">
                         Intro
                     </a>
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="#projects">
                         Projects
                     </a>
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="#contact">
                         Contact
                     </a>
                     <a className="navbar-item" href="/assets/Vandivere_Seth_Resume.pdf">
@@ -163,4 +173,12 @@ function Intro() {
     );
 }
 
-export { Project, Navbar, Intro };
+function Contact(){
+    return (
+        <div className='block has-text-centered' id='contact'>
+            <h2 className="title has-text-weight-semibold is-size-2">Contact</h2>
+        </div>
+    )
+}
+
+export { Project, Navbar, Intro, Contact };
