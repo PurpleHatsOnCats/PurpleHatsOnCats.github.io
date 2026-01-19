@@ -61,7 +61,10 @@
             "infoPage": false,
             "designDoc":"../assets/GoozeGardener_DD.pdf",
             "media": [
-                {"src":"goozeGardener/gg_primary.png", "alt":"3 Colored slimes"}
+                {"src":"goozeGardener/gg_primary.png", "alt":"3 Colored slimes"},
+                {"src":"goozeGardener/gg_title.png", "alt":"Title Screen"},
+                {"src":"goozeGardener/gg_book.png", "alt":"Book of slime recipes"},
+                {"src":"goozeGardener/gg_build.png", "alt":"Build mode"}
             ]
         },
         {
@@ -159,6 +162,35 @@
                 {"src":"bubbleBorne/bb_gameplay2.png", "alt":"The player dodging an encounter with a crab"},
                 {"src":"bubbleBorne/bb_ending1.png", "alt":"The bubble just below the surface of the ocean"},
                 {"src":"bubbleBorne/bb_ending2.png", "alt":"The ending of the game, the bubble surfacing from the ocean"}
+            ]
+        },
+        {
+            "title": "Audio Visualizer",
+            "type": "Class Project",
+            "time": {
+                "year": 2025,
+                "season": "Fall",
+                "length": "2 Week"
+            },
+            "tools": [
+                "Javascript",
+                "Webpack"
+            ],
+            "team": {
+                "size": 1,
+                "roles": [
+                    "programmer"
+                ]
+            },
+            "points": [
+                "Interpreted and manipulated audio data with audio context webkit",
+                "Created visual effects by manipulated at pixel scale",
+                "Deployed backwards compatable build using babel.js"
+            ],
+            "buildPage": "../audioVisualizer/index.html",
+            "infoPage": false,
+            "media": [
+                {"src":"audioVisualizer/av_main.png", "alt":"Visualization of audio"}
             ]
         }
     ]
