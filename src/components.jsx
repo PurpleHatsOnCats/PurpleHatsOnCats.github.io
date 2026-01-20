@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { getIconFromNumber, getIconFromText, returnIfTrue, clampNum, getImage } from './utils.jsx';
 import SethSVG from "./TextToSvgComponent.jsx";
 
-function Project({ project, className}) {
+function Project({ project, className }) {
     return (
         <div className={`card project ${className}`}>
             <div className="card-image">
@@ -76,22 +76,27 @@ function Carousel({ images = [] }) {
         <div className="carousel">
             <div className="carousel-images">
                 {images.map((img, index) => {
-                    if (img.video){return (
-                    <div 
-                        className="slide" 
-                        dangerouslySetInnerHTML={{ __html: img.video }} 
-                        style={{ transform: `translate(-${(slide) * 100}%)` }}
-                        key={index}
-                    />)}
-                    else { return(
-                    <img
-                        className="slide"
-                        src={getImage("projects/" + img.src)}
-                        alt={img.alt}
-                        style={{ transform: `translate(-${(slide) * 100}%)` }}
-                        key={index}
-                    ></img>
-                )}})}
+                    if (img.video) {
+                        return (
+                            <div
+                                className="slide"
+                                dangerouslySetInnerHTML={{ __html: img.video }}
+                                style={{ transform: `translate(-${(slide) * 100}%)` }}
+                                key={index}
+                            />)
+                    }
+                    else {
+                        return (
+                            <img
+                                className="slide"
+                                src={getImage("projects/" + img.src)}
+                                alt={img.alt}
+                                style={{ transform: `translate(-${(slide) * 100}%)` }}
+                                key={index}
+                            ></img>
+                        )
+                    }
+                })}
             </div>
             <button
                 className="button carousel-previous"
@@ -164,7 +169,7 @@ function Intro() {
         <div className='block has-text-centered' id='intro'>
             <h2 className="title has-text-weight-semibold is-size-2">Introduction</h2>
             <div className='has-text-left'>
-                I am a 3rd year Game Design and Development Major at RIT. I have a severe passion for creating and learning, 
+                I am a 3rd year Game Design and Development Major at RIT. I have a severe passion for creating and learning,
                 which has led me on a long journey of improvement ever since the first game I made in 6th grade. I don't just make games however;
                 I have delved into audio engineering and web development as well. Programming, design, and math are especially enjoyable no matter
                 the field.
@@ -173,10 +178,40 @@ function Intro() {
     );
 }
 
-function Contact(){
+function Contact() {
     return (
-        <div className='block has-text-centered' id='contact'>
+        <div className='block has-text-centered mb-6' id='contact'>
             <h2 className="title has-text-weight-semibold is-size-2">Contact</h2>
+            <div className='has-text-center'>
+                <a href="https://github.com/PurpleHatsOnCats">
+                    <span className="icon is-large">
+                        <i class="fa-brands fa-github fa-2xl"></i>
+                    </span>
+                </a>
+                <a href="https://purplehatsoncats.itch.io/">
+                    <span className="icon is-large">
+                        <i class="fa-brands fa-itch-io fa-2xl"></i>
+                    </span>
+                </a>
+                <a href="mailto:seth.vandivere@gmail.com">
+                    <span className="icon is-large">
+                        <i class="fa-solid fa-envelope fa-2xl"></i>
+                    </span>
+                </a>
+                <a href="https://www.linkedin.com/in/seth-vandivere/">
+                    <span className="icon is-large">
+                        <i class="fa-brands fa-linkedin fa-2xl"></i>
+                    </span>
+                </a>
+                <div className="block">seth.vandivere@gmail.com
+                    <br />
+                    Rochester NY
+                    <span className="icon is-large">
+                        <i class="fa-solid fa-circle fa-2xs"></i>
+                    </span>
+                    Manassas VA
+                </div>
+            </div>
         </div>
     )
 }
