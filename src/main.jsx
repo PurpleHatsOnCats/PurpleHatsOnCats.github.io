@@ -18,7 +18,7 @@ createRoot(document.getElementById('root')).render(
     <div id="main" className="mt-4 mx-6">
       <Intro />
       <div className="block" id="projects">
-        <h2 className="title has-text-weight-semibold is-size-2" >Featured Projects</h2>
+        <h2 className="title has-text-weight-semibold is-size-2 has-text-centered">Featured Projects</h2>
         <div className="grid is-gap-5 project-grid is-col-min-14">
           {projects.map((project) => (<Project project={project} key={project.title} className="cell"/>))}
         </div>

@@ -1,6 +1,39 @@
 {
     "projects": [
         {
+            "title": "Scent Detective",
+            "type": "Game Jam",
+            "time": {
+                "year": 2026,
+                "season": "Spring",
+                "length": "2 weeks; Ongoing"
+            },
+            "tools": [
+                "Unity",
+                "C#",
+                "HLSL"
+            ],
+            "team": {
+                "size": 7,
+                "roles": [
+                    "Graphics Programmer",
+                    "UI Design"
+                ]
+            },
+            "points": [
+                "Created basic shaders using Unity's shaderlab",
+                "Integrated shaders into materials for particle effects",
+                "Collaborated with a large team of specialists"
+            ],
+            "buildPage": "https://purplehatsoncats.itch.io/scent-detective",
+            "infoPage": false,
+            "media": [
+                {"video":false, "src":"scentDetective/sd_gameplay.png", "alt":"Scent detective gamplay"},
+                {"video":false, "src":"scentDetective/sd_choice.png", "alt":"All the suspects in the game"},
+                {"video":false, "src":"scentDetective/sd_newspaper.png", "alt":"A newspaper headline about the main case"}      
+            ]
+        },
+        {
             "title": "In C",
             "type": "Class Project",
             "time": {
@@ -138,7 +171,7 @@
             "time": {
                 "year": 2025,
                 "season": "Spring",
-                "length": "2 Days"
+                "length": "2 days"
             },
             "tools": [
                 "Unity",
@@ -170,7 +203,7 @@
             "time": {
                 "year": 2025,
                 "season": "Fall",
-                "length": "2 Week"
+                "length": "2 weeks"
             },
             "tools": [
                 "Javascript",
