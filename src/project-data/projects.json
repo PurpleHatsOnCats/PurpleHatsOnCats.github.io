@@ -1,6 +1,38 @@
 {
     "projects": [
         {
+            "title": "Game Graphics Template",
+            "type": "Class Project",
+            "time": {
+                "year": 2026,
+                "season": "Spring",
+                "length": "1 semester"
+            },
+            "tools": [
+                "C++",
+                "DirectX11"
+            ],
+            "team": {
+                "size": 1,
+                "roles": [
+                    "Graphics Programmer"
+                ]
+            },
+            "points": [
+                "Implemented graphics pipeline utilizing DirectX11",
+                "Integrated different lighting models and texture types",
+                "Learned the history and best practices of game graphics"
+            ],
+            "buildPage": false,
+            "infoPage": false,
+            "codePage": "https://github.com/PurpleHatsOnCats/IGME.540",
+            "media": [
+                {"video":false, "src":"gameGraphics/ggp_models.png", "alt":"3D Models with lighting and normal maps"},
+                {"video":false, "src":"gameGraphics/ggp_inspector.png", "alt":"Inspector overlay describing a material"},
+                {"video":false, "src":"gameGraphics/ggp_shaderSample.png", "alt":"Shader code sample"}
+            ]
+        },
+        {
             "title": "Scent Detective",
             "type": "Game Jam",
             "time": {
@@ -10,8 +42,7 @@
             },
             "tools": [
                 "Unity",
-                "C#",
-                "HLSL"
+                "C#"
             ],
             "team": {
                 "size": 7,

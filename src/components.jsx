@@ -49,6 +49,7 @@ function Project({ project, className }) {
                 {returnIfTrue(project.buildPage, <a href={project.buildPage} className="card-footer-item">Build Page</a>)}
                 {returnIfTrue(project.infoPage, <a href={"#" + project.infoPage} className="card-footer-item">More Info</a>)}
                 {returnIfTrue(project.designDoc, <a href={project.designDoc} className="card-footer-item">Design Document</a>)}
+                {returnIfTrue(project.codePage, <a href={project.codePage} className="card-footer-item">Source Code</a>)}
             </footer>
         </div>
     )
